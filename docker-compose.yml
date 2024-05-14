@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:latest  # La clave correcta es 'image', no 'images'
+    restart: always
+    environment:
+      POSTGRES_DB: nodePrueba
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: 123456
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # 'postgresql', no 'posgresql'
+
+volumes:
+  postgres_data:
